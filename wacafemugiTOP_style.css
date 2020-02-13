@@ -13,9 +13,9 @@ body {
   color: #333333;
 }
 
-#mypic {
-  width:auto;
+#idshow1 , #idshow2 {
   width: 100%;
+  height: auto;
   margin: 0;
   overflow: hidden;
 }
@@ -57,7 +57,7 @@ header ul:hover{
   color: #333;
 }
 
-#page-footer #copyright {
+#page-footer{
   position: fixed;
   left: 0;
   bottom: 16px;
