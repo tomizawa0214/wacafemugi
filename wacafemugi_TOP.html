@@ -28,27 +28,33 @@
         </ul>
       </nav>
     </header>
-    <img id="mypic" src="photo/外観.jpg" width="100vw" height="100vh">
+    <img id="mypic" src="photo/外観.jpg">
     <script>
-      var pics_src = new Array("photo/外観.jpg" , "photo/ローストビーフ丼.jpg" , "photo/パンケーキ.jpg");
-      var num = -1;
-
-      slideshow_timer();
-
-      function slideshow_timer(){
-        if (num == 2){
-          num = 0;
-        }
-        else {
-          num ++;
-        }
-        document.getElementById("mypic").src=pics_src[num];
-        setTimeout("slideshow_timer()" , 1000);
+      // var pics_src = new Array("photo/外観.jpg" , "photo/ローストビーフ丼.jpg" , "photo/パンケーキ.jpg");
+      // var num = -1;
+      //
+      // slideshow_timer();
+      //
+      // function slideshow_timer(){
+      //   if (num == 2){
+      //     num = 0;
+      //   }
+      //   else {
+      //     num ++;
+      //   }
+      //   document.getElementById("mypic").src=pics_src[num];
+      //   setTimeout("slideshow_timer()" , 1000);
+      // }
+      function(){
+        #mypic img:not(:first-child).hide();
+        setInterval(function() {
+        #mypic img(:first-child).fadeOut("slow").next("img").fadeIn("slow").end().appendTo("#mypic");
+        },5000);
       }
     </script>
     <footer id="page-footer">
       <div class="container">
-        <div id="copyright">©2019 Plaline All Rights Reserved.</div>
+        <div id="copyright">©2020 Plaline All Rights Reserved.</div>
       </div>
     </footer>
 </html>
