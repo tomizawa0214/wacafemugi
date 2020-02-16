@@ -50,6 +50,8 @@ header nav{
 header nav ul{
   display: flex;
   width: 600px;
+  padding: 0;
+  margin: 0;
   list-style: none;
   justify-content: space-between;
   text-align: center;
