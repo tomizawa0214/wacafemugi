@@ -1,5 +1,5 @@
 function mouseover1() {
-  document.getElementById('home').innerHTML = '現在の画面';
+  document.getElementById('home').innerHTML = '現在画面';
 }
 function mouseout1() {
   document.getElementById('home').innerHTML = 'Home';
