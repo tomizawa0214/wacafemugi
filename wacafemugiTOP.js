@@ -28,13 +28,13 @@ function mouseout4() {
   document.getElementById('contact').innerHTML = 'Contact';
 }
 
-const myImage = new Array(
+var myImage = new Array(
   "photo/外観.jpg",
   "photo/パンケーキ.jpg",
   "photo/グラタン.jpg",
 );
-const myNowCnt = -1;		// 現在表示している配列番号
-const myflg = 0;		// どっちを表示して、どっちを消すかのフラグ
+var myNowCnt = -1;		// 現在表示している配列番号
+var myflg = 0;		// どっちを表示して、どっちを消すかのフラグ
 function myChange(){	// スライドショーメイン関数
   myNowCnt = (myNowCnt<myImage.length-1) ? myNowCnt+1 : 0;		// 次の配列番号
   myflg = (myflg==0) ? 1 : 0;						// 表示・非表示フラグ反転
@@ -49,7 +49,6 @@ function myChange(){	// スライドショーメイン関数
   }
   setTimeout( "myChange()" , 4000 );					// 4秒周期に画像を更新する
 }
-// myChange();
 
 // $(function(){
 // 	const slides = [];
