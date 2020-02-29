@@ -28,21 +28,49 @@ function mouseout4() {
   document.getElementById('contact').innerHTML = 'Contact';
 }
 
-$(window).resize(function() {
-  $.each(slides, function() {
-    resize(this);
-  });
-});
-
-function resize(slide) {
-  var background = $('#idshow1 , #idshow2', slide);
-  if (background.width() * fitTo.height() > background.height() * fitTo.width()) {
-    background.height(fitTo.height());
-    background.width(fitTo.height() * slide.originalWidth / slide.originalHeight);
-    background.css({ marginLeft: -(background.width() - fitTo.width()) / 2, marginTop: 0 });
-  } else {
-    background.width(fitTo.width());
-    background.height(fitTo.width() * slide.originalHeight / slide.originalWidth);
-    background.css({ marginLeft: 0, marginTop: -(background.height() - fitTo.height()) / 2 });
+const myImage = new Array(
+  "photo/外観.jpg",
+  "photo/パンケーキ.jpg",
+  "photo/グラタン.jpg",
+);
+const myNowCnt = -1;		// 現在表示している配列番号
+const myflg = 0;		// どっちを表示して、どっちを消すかのフラグ
+function myChange(){	// スライドショーメイン関数
+  myNowCnt = (myNowCnt<myImage.length-1) ? myNowCnt+1 : 0;		// 次の配列番号
+  myflg = (myflg==0) ? 1 : 0;						// 表示・非表示フラグ反転
+  if (myflg == 0){
+    document.getElementById("idshow1").src = myImage[myNowCnt];		// 次の画像をセットする
+    document.getElementById("idshow1").className = "fadein";		// フェードイン
+    document.getElementById("idshow2").className = "fadeout";	// フェードアウト
+  }else{
+    document.getElementById("idshow2").src = myImage[myNowCnt];		// 次の画像をセットする
+    document.getElementById("idshow1").className = "fadeout";	// フェードアウト
+    document.getElementById("idshow2").className = "fadein";		// フェードイン
   }
+  setTimeout( "myChange()" , 4000 );					// 4秒周期に画像を更新する
 }
+// myChange();
+
+// $(function(){
+// 	const slides = [];
+// 	const fitTo = $('#idshow1 , #idshow2');
+//
+//   $(window).resize(function() {
+//     $.each(slides, function() {
+//       resize(this);
+//     });
+//   });
+//
+//   function resize(slide) {
+//     const background = $('#idshow1 , #idshow2', slide);
+//     if (background.width() * fitTo.height() > background.height() * fitTo.width()) {
+//       background.height(fitTo.height());
+//       background.width(fitTo.height() * slide.originalWidth / slide.originalHeight);
+//       background.css({ marginLeft: -(background.width() - fitTo.width()) / 2, marginTop: 0 });
+//     } else {
+//       background.width(fitTo.width());
+//       background.height(fitTo.width() * slide.originalHeight / slide.originalWidth);
+//       background.css({ marginLeft: 0, marginTop: -(background.height() - fitTo.height()) / 2 });
+//     }
+//   }
+// });
