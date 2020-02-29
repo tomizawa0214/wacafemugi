@@ -50,26 +50,26 @@ function myChange(){	// スライドショーメイン関数
   setTimeout( "myChange()" , 4000 );					// 4秒周期に画像を更新する
 }
 
-// $(function(){
-// 	const slides = [];
-// 	const fitTo = $('#idshow1 , #idshow2');
-//
-//   $(window).resize(function() {
-//     $.each(slides, function() {
-//       resize(this);
-//     });
-//   });
-//
-//   function resize(slide) {
-//     const background = $('#idshow1 , #idshow2', slide);
-//     if (background.width() * fitTo.height() > background.height() * fitTo.width()) {
-//       background.height(fitTo.height());
-//       background.width(fitTo.height() * slide.originalWidth / slide.originalHeight);
-//       background.css({ marginLeft: -(background.width() - fitTo.width()) / 2, marginTop: 0 });
-//     } else {
-//       background.width(fitTo.width());
-//       background.height(fitTo.width() * slide.originalHeight / slide.originalWidth);
-//       background.css({ marginLeft: 0, marginTop: -(background.height() - fitTo.height()) / 2 });
-//     }
-//   }
-// });
+$(function(){
+	var slides = [];
+	var fitTo = $('#slider');
+
+  $(window).resize(function() {
+    $.each(slides, function() {
+      resize(this);
+    });
+  });
+
+  function resize(slide) {
+    var background = $('#idshow1 , #idshow2', slide);
+    if (background.width() * fitTo.height() > background.height() * fitTo.width()) {
+      background.height(fitTo.height());
+      background.width(fitTo.height() * slide.originalWidth / slide.originalHeight);
+      background.css({ marginLeft: -(background.width() - fitTo.width()) / 2, marginTop: 0 });
+    } else {
+      background.width(fitTo.width());
+      background.height(fitTo.width() * slide.originalHeight / slide.originalWidth);
+      background.css({ marginLeft: 0, marginTop: -(background.height() - fitTo.height()) / 2 });
+    }
+  }
+});
