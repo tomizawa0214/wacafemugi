@@ -61,7 +61,7 @@ $(function(){
   });
 
   function resize(slide) {
-    var background = $('#idshow1 , #idshow2', slide);
+    var background = $('.background img', slide);
     if (background.width() * fitTo.height() > background.height() * fitTo.width()) {
       background.height(fitTo.height());
       background.width(fitTo.height() * slide.originalWidth / slide.originalHeight);
