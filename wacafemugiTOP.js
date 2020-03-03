@@ -50,26 +50,34 @@ function myChange(){	// スライドショーメイン関数
   setTimeout( "myChange()" , 4000 );					// 4秒周期に画像を更新する
 }
 
-$(function(){
-	var slides = [];
-	var fitTo = $('#slider');
-
-  $(window).resize(function() {
-    $.each(slides, function() {
-      resize(this);
-    });
-  });
-
-  function resize(slide) {
-    var background = $('.background img', slide);
-    if (background.width() * fitTo.height() > background.height() * fitTo.width()) {
-      background.height(fitTo.height());
-      background.width(fitTo.height() * slide.originalWidth / slide.originalHeight);
-      background.css({ marginLeft: -(background.width() - fitTo.width()) / 2, marginTop: 0 });
-    } else {
-      background.width(fitTo.width());
-      background.height(fitTo.width() * slide.originalHeight / slide.originalWidth);
-      background.css({ marginLeft: 0, marginTop: -(background.height() - fitTo.height()) / 2 });
-    }
-  }
-});
+//
+// $(function(){
+// 	var slides = [];
+// 	var fitTo = $('#slider');
+//   $('#slider img').each(function() {
+//     var slide = $(this);
+//     slide.originalWidth = slide.width();
+//     slide.originalHeight = slide.height();
+//     slides.push(slide);
+//     resize(slide);
+//   });
+//
+//   $(window).resize(function() {
+//     $.each(slides, function() {
+//       resize(this);
+//     });
+//   });
+//
+//   function resize(slide) {
+//     var background = $('.background img', slide);
+//     if (background.width() * fitTo.height() > background.height() * fitTo.width()) {
+//       background.height(fitTo.height());
+//       background.width(fitTo.height() * slide.originalWidth / slide.originalHeight);
+//       background.css({ marginLeft: -(background.width() - fitTo.width()) / 2, marginTop: 0 });
+//     } else {
+//       background.width(fitTo.width());
+//       background.height(fitTo.width() * slide.originalHeight / slide.originalWidth);
+//       background.css({ marginLeft: 0, marginTop: -(background.height() - fitTo.height()) / 2 });
+//     }
+//   }
+// });

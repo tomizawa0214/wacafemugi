@@ -20,30 +20,32 @@ body {
 #slider {
   position: absolute;
   width: 100%;
-  height: 100%;
+  /* top: 0;
+  left: 0; */
+  /* height: 100%; */
 }
 
-.background {
+#slider ul li {
   position: absolute;
   width: 100%;
-  height: 100%;
-}
-
-#idshow1 , #idshow2 {
-  width: 100%;
-  margin: 0;
+  /* top: 0;
+  left: 0;
+  /* height: 100%; */
+  /* overflow: hidden; */
 }
 
 .fadeout {
   opacity: 0;
-  transition: 3s ease-in-out;
-  -webkit-transition: 3s ease-in-out;
+  transition-property: opacity;
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
 }
 
 .fadein {
   opacity: 1;
-  transition: 3s ease-in-out;
-  -webkit-transition: 3s ease-in-out;
+  transition-property: opacity;
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out;
 }
 
 header {
@@ -114,3 +116,4 @@ header nav ul a {
   #page-footer {
     color: black;
   } */
+}}
